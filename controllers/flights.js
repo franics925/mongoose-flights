@@ -21,6 +21,8 @@ function create(req, res) {
   var flight = new Flight(req.body);
   flight.save(function(err, flight) {
     // one way to handle errors
+    console.log("something");
+    console.log(err);
     if (err) return res.render('flights/new');
     console.log(flight);
     // for now, redirect right back to new.ejs

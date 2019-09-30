@@ -3,14 +3,20 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ticketSchema = new Schema({
-    destination: {
-        type: String,
-        required: true,
-        enum: ['DAL', 'AUS', 'LAX', 'SEA']
+    seat: {
+        type: String
     },
-    arrival: {
-        type: Date
+    price: {
+        type: Number,
+        min: 0,
+        default: 0
+    },
+    flight: {
+        type: Schema.Types.ObjectId,
+        ref: "flight",
+        required: true
     }
+
 }, {
     timestamps: true
 });

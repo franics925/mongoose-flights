@@ -6,7 +6,7 @@ var destinationSchema = new Schema({
     destination: {
         type: String,
         required: true,
-        enum: ['DAL', 'AUS', 'LAX', 'SEA']
+        enum: ['DAL', 'AUS', 'LAX', 'SEA', 'SFO']
     },
     arrival: {
         type: Date
@@ -37,7 +37,7 @@ var flightSchema = new Schema({
     airport: {
         type: String,
         required: true,
-        enum: ['DAL', 'AUS', 'LAX', 'SEA'],
+        enum: ['DAL', 'AUS', 'LAX', 'SEA', 'SFO'],
         default: 'SEA'
     },
     flightPlan: {
